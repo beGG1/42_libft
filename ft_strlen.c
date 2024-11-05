@@ -1,18 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalpha.c                                       :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sshabali <sshabali@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/05 05:42:29 by sshabali          #+#    #+#             */
-/*   Updated: 2024/11/05 05:55:32 by sshabali         ###   ########.fr       */
+/*   Created: 2024/11/05 13:12:44 by sshabali          #+#    #+#             */
+/*   Updated: 2024/11/05 13:17:14 by sshabali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isalpha(int c)
+size_t	ft_strlen(const char *s)
 {
-	if ((c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z'))
-		return (1);
-	return (0);
+	unsigned long	len;
+
+	len = 0;
+	while (s[len])
+		len++;
+	return (len);
 }

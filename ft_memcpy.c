@@ -1,18 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalpha.c                                       :+:      :+:    :+:   */
+/*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sshabali <sshabali@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/05 05:42:29 by sshabali          #+#    #+#             */
-/*   Updated: 2024/11/05 05:55:32 by sshabali         ###   ########.fr       */
+/*   Created: 2024/11/05 13:29:55 by sshabali          #+#    #+#             */
+/*   Updated: 2024/11/05 13:33:26 by sshabali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isalpha(int c)
+void	*ft_memcpy(void *dest, const void *src, size_t n)
 {
-	if ((c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z'))
-		return (1);
-	return (0);
+	n--;
+	while (n >= 0)
+	{
+		dest[n] = src[n];
+		n--;
+	}
+	return (dest);
 }
