@@ -1,23 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sshabali <sshabali@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/05 13:12:44 by sshabali          #+#    #+#             */
-/*   Updated: 2024/11/05 13:17:14 by sshabali         ###   ########.fr       */
+/*   Created: 2024/11/06 17:36:01 by sshabali          #+#    #+#             */
+/*   Updated: 2024/11/06 17:41:46 by sshabali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-size_t	ft_strlen(const char *s)
+size_t	strlcpy(char *dst, const char *src, size_t size)
 {
-	unsigned long	len;
-
-	len = 0;
-	while (s[len])
-		len++;
-	return (len);
+	
 }
