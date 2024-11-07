@@ -1,30 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sshabali <sshabali@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/05 13:29:55 by sshabali          #+#    #+#             */
-/*   Updated: 2024/11/05 13:33:26 by sshabali         ###   ########.fr       */
+/*   Created: 2024/11/07 17:23:38 by sshabali          #+#    #+#             */
+/*   Updated: 2024/11/07 18:08:07 by sshabali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memcpy(void *dest, const void *src, size_t n)
+size_t	ft_strlcat(char *dest, const char *src, size_t size)
 {
-	char	*d;
-	char	*s;
-	size_t	i;
+	size_t	d;
+	size_t	s;
 
-	i = 0;
-	d = (char *)dest;
-	s = (char *)src;
-	while (i < n)
-	{
-		d[i] = s[i];
-		i++;
-	}
-	return (dest);
+	d = 0;
+	while (dest[d])
+		d++;
+
+
+
 }

@@ -6,7 +6,7 @@
 /*   By: sshabali <sshabali@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/06 17:44:30 by sshabali          #+#    #+#             */
-/*   Updated: 2024/11/06 18:37:58 by sshabali         ###   ########.fr       */
+/*   Updated: 2024/11/06 19:46:28 by sshabali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,12 @@ int			ft_tolower(int c);
 size_t		ft_strlen(const char *s);
 char		*ft_strchr(const char *s, int c);
 char		*ft_strrchr(const char *s, int c);
-
+int			ft_strncmp(const char *s1, const char *s2, size_t n);
+void		*ft_memset(void *s, int c, size_t n);
+void		*ft_memchr(const void *s, int c, size_t n);
+void		*ft_memcpy(void *dest, const void *src, size_t n);
+int			ft_memcmp(const void *s1, const void *s2, size_t n);
+void		*ft_memmove(void *dest, const void *src, size_t n);
+size_t		ft_strlcpy(char *dest, const char *src, size_t n);
 
 #endif

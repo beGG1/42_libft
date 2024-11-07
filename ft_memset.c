@@ -10,12 +10,16 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
+
 void	*ft_memset(void *s, int c, size_t n)
 {
-	n--;
-	while (n >= 0)
+	int	*p;
+
+	p = (int *)s;
+	while (n)
 	{
-		s[n] = c;
+		p[n - 1] = c;
 		n--;
 	}
 	return (s);
