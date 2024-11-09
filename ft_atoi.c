@@ -1,37 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sshabali <sshabali@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/06 17:36:01 by sshabali          #+#    #+#             */
-/*   Updated: 2024/11/06 17:41:46 by sshabali         ###   ########.fr       */
+/*   Created: 2024/11/09 15:20:58 by sshabali          #+#    #+#             */
+/*   Updated: 2024/11/09 15:28:48 by sshabali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlcpy(char *dst, const char *src, size_t size)
+int	ft_atoi(const char *nptr)
 {
-	int	src_len;
-	int	to_copy;
+	int	sign;
+	int	result;
 	int	i;
 
-	src_len = ft_strlen(src);
-	if (size != 0)
+	i = 0;
+	sign = 1;
+	while (nptr[i] == ' ')
+		i++;
+	if (nptr[i] == '-' || nptr[i] == '+')
 	{
-		if (src_len < size)
-			to_copy = src_len;
-		else
-			to_copy = size - 1;
-		i = 0;
-		while (i < to_copy)
-		{
-			dst[i] = src[i];
-			i++;
-		}
+		if (nptr[i] == '-')
+			sign = -1;
+		i++;
 	}
-	dst[to_copy] = '\0';
-	return (src_len);
+	while (nptr[i] >= '0' && nptr[i] <= '9')
+	{
+		result = result * 10 + (nptr[i] - '0');
+		i++;
+	}
+	return (sign * result);
 }

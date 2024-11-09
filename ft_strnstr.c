@@ -1,37 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
+/*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sshabali <sshabali@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/06 17:36:01 by sshabali          #+#    #+#             */
-/*   Updated: 2024/11/06 17:41:46 by sshabali         ###   ########.fr       */
+/*   Created: 2024/11/09 15:07:07 by sshabali          #+#    #+#             */
+/*   Updated: 2024/11/09 15:19:33 by sshabali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlcpy(char *dst, const char *src, size_t size)
+char	*ft_strnstr(const char *big, const char *little, size_t len)
 {
-	int	src_len;
-	int	to_copy;
-	int	i;
+	size_t	i;
+	size_t	j;
 
-	src_len = ft_strlen(src);
-	if (size != 0)
+	i = 0;
+	while (i < len && big[i] != '\0')
 	{
-		if (src_len < size)
-			to_copy = src_len;
-		else
-			to_copy = size - 1;
-		i = 0;
-		while (i < to_copy)
-		{
-			dst[i] = src[i];
-			i++;
-		}
+		j = 0;
+		while (i + j < len && little[j] != '\0' && little[j] == big[i + j])
+			j++;
+		if (little[j] == '\0')
+			return ((char *)big + i);
+		i++;
 	}
-	dst[to_copy] = '\0';
-	return (src_len);
+	return (0);
 }

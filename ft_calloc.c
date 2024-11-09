@@ -1,37 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sshabali <sshabali@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/06 17:36:01 by sshabali          #+#    #+#             */
-/*   Updated: 2024/11/06 17:41:46 by sshabali         ###   ########.fr       */
+/*   Created: 2024/11/09 15:30:18 by sshabali          #+#    #+#             */
+/*   Updated: 2024/11/09 15:38:22 by sshabali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlcpy(char *dst, const char *src, size_t size)
+void	*ft_calloc(size_t nmemb, size_t size)
 {
-	int	src_len;
-	int	to_copy;
-	int	i;
+	void	*ret;
 
-	src_len = ft_strlen(src);
-	if (size != 0)
-	{
-		if (src_len < size)
-			to_copy = src_len;
-		else
-			to_copy = size - 1;
-		i = 0;
-		while (i < to_copy)
-		{
-			dst[i] = src[i];
-			i++;
-		}
-	}
-	dst[to_copy] = '\0';
-	return (src_len);
+	ret = (void *)malloc(nmemb * size);
+	if (ret == NULL || nmemb * size == 0)
+		return (ret);
+	ft_memset(ret, 0, nmemb * size);
+	return (ret);
 }
