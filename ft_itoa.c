@@ -30,10 +30,10 @@ static size_t	ft_numlen(int n)
 
 char	*ft_itoa(int n)
 {
-	long	num;
-	char	*str;
-	size_t	len;
-	int		i;
+	long		num;
+	char		*str;
+	size_t		len;
+	size_t		i;
 
 	len = ft_numlen(n);
 	num = n;
