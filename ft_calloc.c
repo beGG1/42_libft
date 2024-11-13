@@ -15,7 +15,13 @@
 void	*ft_calloc(size_t nmemb, size_t size)
 {
 	void	*ret;
+	size_t	max_items;
 
+	if (size == 0 || nmemb == 0)
+		return (NULL);
+	max_items = 0xffffffffffffffffUL / size;
+	if (max_items < nmemb)
+		return (NULL);
 	ret = (void *)malloc(nmemb * size);
 	if (ret == NULL || nmemb * size == 0)
 		return (ret);

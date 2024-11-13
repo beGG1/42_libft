@@ -3,8 +3,8 @@
 
 int main() {
 	printf("%s\n", "____atoi");
-	printf("%d\n", ft_atoi("0"));
-	printf("%d\n", ft_atoi("   10q"));
+	printf("%d\n", ft_atoi("              			-42lyon"));
+	printf("%d\n", ft_atoi("+101"));
 	printf("%d\n", ft_atoi("-300"));
 	printf("%d\n", ft_atoi("s0"));
 	printf("%d\n", ft_atoi("    +1233456asdf"));
@@ -71,4 +71,11 @@ int main() {
 	printf("%d\n", ft_memcmp("ssaa", "ssaa", 10));
 	printf("%d\n", ft_memcmp("ssaa", "ssb", 10));
 
+	printf("%s\n", "ft_memcpy");
+	char a[] = "1234";
+	char b[] = "5432";
+	ft_memcpy(a, b, 2);
+	printf("%s\n", a);
+
+	printf("%s\n", "memmove");
 }
