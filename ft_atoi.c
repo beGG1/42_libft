@@ -20,6 +20,7 @@ int	ft_atoi(const char *nptr)
 
 	i = 0;
 	sign = 1;
+	result = 0;
 	while (nptr[i] == ' ')
 		i++;
 	if (nptr[i] == '-' || nptr[i] == '+')
