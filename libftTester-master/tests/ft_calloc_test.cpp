@@ -10,6 +10,8 @@ extern "C"
 #include "leaks.hpp"
 #include <string.h>
 #include <limits.h>
+#include <cstdint>   // Alternative in C++11 or later for SIZE_MAX
+
 
 int iTest = 1;
 int main(void)
@@ -21,7 +23,7 @@ int main(void)
 	char e[] = {0, 0, 0, 0};
 	/* 1 */ check(!memcmp(p, e, 4));
 	/* 2 */ mcheck(p, 4); free(p); showLeaks();
-	///* 3 */ check(ft_calloc(SIZE_MAX, SIZE_MAX) == NULL); showLeaks();
+	/* 3 */ check(ft_calloc(SIZE_MAX, SIZE_MAX) == NULL); showLeaks();
 
 	/* @evportel */
 	/* The following tests are not supported by the function's documentation. 

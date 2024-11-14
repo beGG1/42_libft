@@ -30,9 +30,9 @@ static size_t	ft_malloc_size(char const *s, unsigned int start, size_t len)
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	char	*ptr;
-	int		i;
-	size_t	malloc_size;
+	char		*ptr;
+	size_t		i;
+	size_t		malloc_size;
 
 	malloc_size = ft_malloc_size(s, start, len);
 	ptr = (char *)malloc(sizeof(char) * (malloc_size + 1));

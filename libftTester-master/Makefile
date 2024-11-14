@@ -4,11 +4,12 @@ PARENT_DIR		= $(shell dirname $(shell pwd))
 LIBFT_PATH		= $(PARENT_DIR)
 TESTS_PATH		= tests/
 
-#  memset bzero memcpy memmove memchr memcmp strlen isalpha isdigit isalnum
-# isascii isprint toupper tolower strchr strrchr strncmp strlcpy strlcat strnstr
-# atoi calloc strdup substr strjoin strtrim split itoa strmapi putchar_fd putstr_fd
 
-MANDATORY		= putendl_fd putnbr_fd striteri
+
+MANDATORY		=  	memset bzero memcpy memmove memchr memcmp strlen isalpha isdigit isalnum \
+					isascii isprint toupper tolower strchr strrchr strncmp strlcpy strlcat strnstr \
+					atoi calloc strdup substr strjoin strtrim split itoa strmapi putchar_fd putstr_fd \
+					putendl_fd putnbr_fd striteri
 BONUS			= lstnew lstadd_front lstsize lstlast lstadd_back lstdelone lstclear lstiter lstmap
 VSOPEN			= $(addprefix vs, $(MANDATORY)) $(addprefix vs, $(BONUS))
 
