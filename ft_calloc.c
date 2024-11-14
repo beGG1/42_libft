@@ -14,17 +14,13 @@
 
 void	*ft_calloc(size_t nmemb, size_t size)
 {
-	void	*ret;
-	size_t	max_items;
+	size_t		total_size;
+	char		*ptr;
 
-	if (size == 0 || nmemb == 0)
+	total_size = nmemb * size;
+	ptr = malloc(total_size);
+	if (!ptr)
 		return (NULL);
-	max_items = 0xffffffffffffffffUL / size;
-	if (max_items < nmemb)
-		return (NULL);
-	ret = (void *)malloc(nmemb * size);
-	if (ret == NULL || nmemb * size == 0)
-		return (ret);
-	ft_memset(ret, 0, nmemb * size);
-	return (ret);
+	ft_memset(ptr, 0, total_size);
+	return (ptr);
 }

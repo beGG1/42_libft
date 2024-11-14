@@ -25,7 +25,6 @@ int main(void)
 
 	char * * tab = ft_split("  tripouille  42  ", ' ');
 	/* 1 */ mcheck(tab, sizeof(char *) * 3);
-
 	/* 2 */ check(!strcmp(tab[0], "tripouille"));
 	/* 3 */ mcheck(tab[0], strlen("tripouille") + 1);
 

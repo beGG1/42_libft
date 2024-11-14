@@ -42,7 +42,7 @@ static char	*ft_strndup(char const *s, size_t len)
 	word = (char *)malloc(sizeof(char) * (len + 1));
 	if (word == NULL)
 		return (NULL);
-	ft_strlcpy(word, s, len);
+	ft_strlcpy(word, s, len + 1);
 	return (word);
 }
 
@@ -69,7 +69,7 @@ char	**ft_split(char const *s, char c)
 			i++;
 		}
 		if (j > 0)
-			ret[k++] = ft_strndup(s + i, j);
+			ret[k++] = ft_strndup(s + i - j, j);
 	}
 	ret[k] = NULL;
 	return (ret);

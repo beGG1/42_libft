@@ -29,7 +29,7 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 			i++;
 		}
 	}
-	else 
+	else
 	{
 		while (i < n)
 		{

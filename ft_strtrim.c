@@ -38,9 +38,9 @@ char	*ft_strtrim(char const *s1, char const *set)
 	end = ft_strlen(s1) - 1;
 	while (end > start && in_set(set, s1[end]))
 		end--;
-	ptr = (char *)malloc(end - start + 1);
+	ptr = (char *)malloc(end - start + 2);
 	if (ptr == NULL)
 		return (NULL);
-	ft_strlcpy(ptr, s1 + start, end - start);
+	ft_strlcpy(ptr, s1 + start, end - start + 2);
 	return (ptr);
 }
