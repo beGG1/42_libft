@@ -11,7 +11,6 @@
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <unistd.h>
 
 static size_t	ft_malloc_size(char const *s, unsigned int start, size_t len)
 {
