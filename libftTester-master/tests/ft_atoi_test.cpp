@@ -17,7 +17,7 @@ int main(void)
 	signal(SIGSEGV, sigsegv); 
 	title("ft_atoi\t\t: ")
 
-	char escape[] = {9, 10, 11, 12, 13, 0};
+	char escape[] = {9, 10, 11, 12, 13, 32, 0};
 	string e(escape);
 	/* 1 */ check(ft_atoi((e + "1").c_str()) == 1); showLeaks();
 	/* 2 */ check(ft_atoi((e + "a1").c_str()) == 0); showLeaks();
