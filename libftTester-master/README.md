@@ -9,7 +9,7 @@ Clone this tester in your libft repository, or somewhere else and customize the 
 make m = launch mandatory tests  
 make b = launch bonus tests  
 make a = launch mandatory tests + bonus tests  
-make [function name] = launch associated test ex: `make calloc`  
+make [function name] = launch associated test ex: `make calloc`   
  
 make dockerm = launch mandatory tests in linux container  
 make dockerb = launch bonus tests in linux container  
