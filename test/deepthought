@@ -1,0 +1,147 @@
+= Host-specific information ====================================================
+$> hostname; uname -msr
+beggi
+Linux 6.11.6-zen1-1-zen x86_64
+$> date
+Сб 16 ноя 2024 20:09:50 MSK
+$> gcc --version
+gcc (GCC) 14.2.1 20240910
+Copyright (C) 2024 Free Software Foundation, Inc.
+This is free software; see the source for copying conditions.  There is NO
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+$> clang --version
+clang version 18.1.8
+Target: x86_64-pc-linux-gnu
+Thread model: posix
+InstalledDir: /usr/bin
+
+= libft.h=======================================================================
+$> norminette libft.h | grep -E '(Error|Warning)'
+
+= Compiling libft ==============================================================
+$> make re
+rm -f ft_atoi.o ft_bzero.o ft_calloc.o ft_isalnum.o ft_isalpha.o ft_isascii.o ft_isdigit.o ft_isprint.o ft_itoa.o ft_memchr.o ft_memcmp.o ft_memcpy.o ft_memmove.o ft_memset.o ft_putchar_fd.o ft_putendl_fd.o ft_putnbr_fd.o ft_putstr_fd.o ft_split.o ft_strchr.o ft_strdup.o ft_striteri.o ft_strjoin.o ft_strlcat.o ft_strlcpy.o ft_strlen.o ft_strmapi.o ft_strncmp.o ft_strnstr.o ft_strrchr.o ft_strtrim.o ft_substr.o ft_tolower.o ft_toupper.o ft_lstnew_bonus.o ft_lstadd_back_bonus.o ft_lstadd_front_bonus.o ft_lstclear_bonus.o ft_lstdelone_bonus.o ft_lstiter_bonus.o ft_lstlast_bonus.o ft_lstmap_bonus.o ft_lstsize_bonus.o
+rm -f libft.a
+cc -Wall -Wextra -Werror -c ft_atoi.c -o ft_atoi.o
+cc -Wall -Wextra -Werror -c ft_bzero.c -o ft_bzero.o
+cc -Wall -Wextra -Werror -c ft_calloc.c -o ft_calloc.o
+cc -Wall -Wextra -Werror -c ft_isalnum.c -o ft_isalnum.o
+cc -Wall -Wextra -Werror -c ft_isalpha.c -o ft_isalpha.o
+cc -Wall -Wextra -Werror -c ft_isascii.c -o ft_isascii.o
+cc -Wall -Wextra -Werror -c ft_isdigit.c -o ft_isdigit.o
+cc -Wall -Wextra -Werror -c ft_isprint.c -o ft_isprint.o
+cc -Wall -Wextra -Werror -c ft_itoa.c -o ft_itoa.o
+cc -Wall -Wextra -Werror -c ft_memchr.c -o ft_memchr.o
+cc -Wall -Wextra -Werror -c ft_memcmp.c -o ft_memcmp.o
+cc -Wall -Wextra -Werror -c ft_memcpy.c -o ft_memcpy.o
+cc -Wall -Wextra -Werror -c ft_memmove.c -o ft_memmove.o
+cc -Wall -Wextra -Werror -c ft_memset.c -o ft_memset.o
+cc -Wall -Wextra -Werror -c ft_putchar_fd.c -o ft_putchar_fd.o
+cc -Wall -Wextra -Werror -c ft_putendl_fd.c -o ft_putendl_fd.o
+cc -Wall -Wextra -Werror -c ft_putnbr_fd.c -o ft_putnbr_fd.o
+cc -Wall -Wextra -Werror -c ft_putstr_fd.c -o ft_putstr_fd.o
+cc -Wall -Wextra -Werror -c ft_split.c -o ft_split.o
+cc -Wall -Wextra -Werror -c ft_strchr.c -o ft_strchr.o
+cc -Wall -Wextra -Werror -c ft_strdup.c -o ft_strdup.o
+cc -Wall -Wextra -Werror -c ft_striteri.c -o ft_striteri.o
+cc -Wall -Wextra -Werror -c ft_strjoin.c -o ft_strjoin.o
+cc -Wall -Wextra -Werror -c ft_strlcat.c -o ft_strlcat.o
+cc -Wall -Wextra -Werror -c ft_strlcpy.c -o ft_strlcpy.o
+cc -Wall -Wextra -Werror -c ft_strlen.c -o ft_strlen.o
+cc -Wall -Wextra -Werror -c ft_strmapi.c -o ft_strmapi.o
+cc -Wall -Wextra -Werror -c ft_strncmp.c -o ft_strncmp.o
+cc -Wall -Wextra -Werror -c ft_strnstr.c -o ft_strnstr.o
+cc -Wall -Wextra -Werror -c ft_strrchr.c -o ft_strrchr.o
+cc -Wall -Wextra -Werror -c ft_strtrim.c -o ft_strtrim.o
+cc -Wall -Wextra -Werror -c ft_substr.c -o ft_substr.o
+cc -Wall -Wextra -Werror -c ft_tolower.c -o ft_tolower.o
+cc -Wall -Wextra -Werror -c ft_toupper.c -o ft_toupper.o
+ar -rcs libft.a ft_atoi.o ft_bzero.o ft_calloc.o ft_isalnum.o ft_isalpha.o ft_isascii.o ft_isdigit.o ft_isprint.o ft_itoa.o ft_memchr.o ft_memcmp.o ft_memcpy.o ft_memmove.o ft_memset.o ft_putchar_fd.o ft_putendl_fd.o ft_putnbr_fd.o ft_putstr_fd.o ft_split.o ft_strchr.o ft_strdup.o ft_striteri.o ft_strjoin.o ft_strlcat.o ft_strlcpy.o ft_strlen.o ft_strmapi.o ft_strncmp.o ft_strnstr.o ft_strrchr.o ft_strtrim.o ft_substr.o ft_tolower.o ft_toupper.o
+
+$> make bonus
+cc -Wall -Wextra -Werror -c ft_atoi.c -o ft_atoi.o
+cc -Wall -Wextra -Werror -c ft_bzero.c -o ft_bzero.o
+cc -Wall -Wextra -Werror -c ft_calloc.c -o ft_calloc.o
+cc -Wall -Wextra -Werror -c ft_isalnum.c -o ft_isalnum.o
+cc -Wall -Wextra -Werror -c ft_isalpha.c -o ft_isalpha.o
+cc -Wall -Wextra -Werror -c ft_isascii.c -o ft_isascii.o
+cc -Wall -Wextra -Werror -c ft_isdigit.c -o ft_isdigit.o
+cc -Wall -Wextra -Werror -c ft_isprint.c -o ft_isprint.o
+cc -Wall -Wextra -Werror -c ft_itoa.c -o ft_itoa.o
+cc -Wall -Wextra -Werror -c ft_memchr.c -o ft_memchr.o
+cc -Wall -Wextra -Werror -c ft_memcmp.c -o ft_memcmp.o
+cc -Wall -Wextra -Werror -c ft_memcpy.c -o ft_memcpy.o
+cc -Wall -Wextra -Werror -c ft_memmove.c -o ft_memmove.o
+cc -Wall -Wextra -Werror -c ft_memset.c -o ft_memset.o
+cc -Wall -Wextra -Werror -c ft_putchar_fd.c -o ft_putchar_fd.o
+cc -Wall -Wextra -Werror -c ft_putendl_fd.c -o ft_putendl_fd.o
+cc -Wall -Wextra -Werror -c ft_putnbr_fd.c -o ft_putnbr_fd.o
+cc -Wall -Wextra -Werror -c ft_putstr_fd.c -o ft_putstr_fd.o
+cc -Wall -Wextra -Werror -c ft_split.c -o ft_split.o
+cc -Wall -Wextra -Werror -c ft_strchr.c -o ft_strchr.o
+cc -Wall -Wextra -Werror -c ft_strdup.c -o ft_strdup.o
+cc -Wall -Wextra -Werror -c ft_striteri.c -o ft_striteri.o
+cc -Wall -Wextra -Werror -c ft_strjoin.c -o ft_strjoin.o
+cc -Wall -Wextra -Werror -c ft_strlcat.c -o ft_strlcat.o
+cc -Wall -Wextra -Werror -c ft_strlcpy.c -o ft_strlcpy.o
+cc -Wall -Wextra -Werror -c ft_strlen.c -o ft_strlen.o
+cc -Wall -Wextra -Werror -c ft_strmapi.c -o ft_strmapi.o
+cc -Wall -Wextra -Werror -c ft_strncmp.c -o ft_strncmp.o
+cc -Wall -Wextra -Werror -c ft_strnstr.c -o ft_strnstr.o
+cc -Wall -Wextra -Werror -c ft_strrchr.c -o ft_strrchr.o
+cc -Wall -Wextra -Werror -c ft_strtrim.c -o ft_strtrim.o
+cc -Wall -Wextra -Werror -c ft_substr.c -o ft_substr.o
+cc -Wall -Wextra -Werror -c ft_tolower.c -o ft_tolower.o
+cc -Wall -Wextra -Werror -c ft_toupper.c -o ft_toupper.o
+ar -rcs libft.a ft_atoi.o ft_bzero.o ft_calloc.o ft_isalnum.o ft_isalpha.o ft_isascii.o ft_isdigit.o ft_isprint.o ft_itoa.o ft_memchr.o ft_memcmp.o ft_memcpy.o ft_memmove.o ft_memset.o ft_putchar_fd.o ft_putendl_fd.o ft_putnbr_fd.o ft_putstr_fd.o ft_split.o ft_strchr.o ft_strdup.o ft_striteri.o ft_strjoin.o ft_strlcat.o ft_strlcpy.o ft_strlen.o ft_strmapi.o ft_strncmp.o ft_strnstr.o ft_strrchr.o ft_strtrim.o ft_substr.o ft_tolower.o ft_toupper.o
+cc -Wall -Wextra -Werror -c ft_lstnew_bonus.c -o ft_lstnew_bonus.o
+cc -Wall -Wextra -Werror -c ft_lstadd_back_bonus.c -o ft_lstadd_back_bonus.o
+cc -Wall -Wextra -Werror -c ft_lstadd_front_bonus.c -o ft_lstadd_front_bonus.o
+cc -Wall -Wextra -Werror -c ft_lstclear_bonus.c -o ft_lstclear_bonus.o
+cc -Wall -Wextra -Werror -c ft_lstdelone_bonus.c -o ft_lstdelone_bonus.o
+cc -Wall -Wextra -Werror -c ft_lstiter_bonus.c -o ft_lstiter_bonus.o
+cc -Wall -Wextra -Werror -c ft_lstlast_bonus.c -o ft_lstlast_bonus.o
+cc -Wall -Wextra -Werror -c ft_lstmap_bonus.c -o ft_lstmap_bonus.o
+cc -Wall -Wextra -Werror -c ft_lstsize_bonus.c -o ft_lstsize_bonus.o
+ar -rcs libft.a ft_lstnew_bonus.o ft_lstadd_back_bonus.o ft_lstadd_front_bonus.o ft_lstclear_bonus.o ft_lstdelone_bonus.o ft_lstiter_bonus.o ft_lstlast_bonus.o ft_lstmap_bonus.o ft_lstsize_bonus.o
+
+$> ls -la libft.a
+-rw-r--r-- 1 beggi_i3 beggi_i3 66270 ноя 16 20:09 /home/beggi_i3/Documents/code/42/42_libft/test/dirlibft/libft.a
+
+= Part2_functions ==============================================================
+
+= ft_split.c ===================================================================
+$> norminette ft_split.c | grep -E '(Error|Warning)'
+$> clang -Wextra -Wall -Werror -g3 -fsanitize=address ft_split.c main.c libft.a -o user_exe
+
+= Test 1 ===================================================
+$> ./user_exe 01
+$> diff -U 3 user_output_test01 test01.output
+
+Diff OK :D
+= Test 2 ===================================================
+$> ./user_exe 02
+$> diff -U 3 user_output_test02 test02.output
+
+Diff OK :D
+= Test 3 ===================================================
+$> ./user_exe 03
+$> diff -U 3 user_output_test03 test03.output
+
+Diff OK :D
+= Test 4 ===================================================
+$> ./user_exe 04
+$> diff -U 3 user_output_test04 test04.output
+
+Diff OK :D
+= Test 5 ===================================================
+$> ./user_exe 05
+$> diff -U 3 user_output_test05 test05.output
+
+Diff OK :D
+= Test 6 ===================================================
+$> ./user_exe 06
+$> diff -U 3 user_output_test06 test06.output
+
+Diff OK :D
