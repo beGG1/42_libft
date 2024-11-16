@@ -46,6 +46,30 @@ static char	*ft_strndup(char const *s, size_t len)
 	return (word);
 }
 
+static void	*free_split(char **split, size_t size)
+{
+	size_t	i;
+
+	i = 0;
+	while (i < size)
+	{
+		free(split[i]);
+		i++;
+	}
+	free(split);
+	return (NULL);
+}
+
+static int	get_end_word(char const *s, char c, int i)
+{
+	size_t	j;
+
+	j = 0;
+	while (s[i + j] && s[i + j] != c)
+		j++;
+	return (j);
+}
+
 char	**ft_split(char const *s, char c)
 {
 	size_t	i;
@@ -54,22 +78,22 @@ char	**ft_split(char const *s, char c)
 	char	**ret;
 
 	ret = (char **)malloc(sizeof(char *) * (ft_count_words(s, c) + 1));
-	if (ret == NULL)
+	if (!ret)
 		return (NULL);
 	i = 0;
 	k = 0;
-	while (s[i] != '\0')
+	while (s[i])
 	{
-		j = 0;
 		while (s[i] == c)
 			i++;
-		while (s[i] != c && s[i] != '\0')
+		j = get_end_word(s, c, i);
+		if (j)
 		{
-			j++;
-			i++;
+			ret[k] = ft_strndup(s + i, j);
+			if (!ret[k++])
+				return (free_split(ret, k - 1));
 		}
-		if (j > 0)
-			ret[k++] = ft_strndup(s + i - j, j);
+		i += j;
 	}
 	ret[k] = NULL;
 	return (ret);
