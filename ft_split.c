@@ -73,10 +73,11 @@ static int	get_end_word(char const *s, char c, int i)
 char	**ft_split(char const *s, char c)
 {
 	size_t	i;
-	size_t	j;
 	size_t	k;
 	char	**ret;
 
+	if (!s)
+		return (NULL);
 	ret = (char **)malloc(sizeof(char *) * (ft_count_words(s, c) + 1));
 	if (!ret)
 		return (NULL);
@@ -86,14 +87,13 @@ char	**ft_split(char const *s, char c)
 	{
 		while (s[i] == c)
 			i++;
-		j = get_end_word(s, c, i);
-		if (j)
+		if (get_end_word(s, c, i))
 		{
-			ret[k] = ft_strndup(s + i, j);
+			ret[k] = ft_strndup(s + i, get_end_word(s, c, i));
 			if (!ret[k++])
 				return (free_split(ret, k - 1));
 		}
-		i += j;
+		i += get_end_word(s, c, i);
 	}
 	ret[k] = NULL;
 	return (ret);
