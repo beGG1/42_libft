@@ -6,7 +6,7 @@
 /*   By: sshabali <sshabali@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/06 17:44:30 by sshabali          #+#    #+#             */
-/*   Updated: 2024/11/06 19:46:28 by sshabali         ###   ########.fr       */
+/*   Updated: 2025/01/04 10:15:51 by sshabali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 # include <unistd.h>
 # include <stdlib.h>
+# include <stdarg.h>
 
 typedef struct s_list
 {
@@ -65,5 +66,23 @@ void		ft_lstdelone(t_list *lst, void (*del)(void*));
 void		ft_lstclear(t_list **lst, void (*del)(void*));
 void		ft_lstiter(t_list *lst, void (*f)(void *));
 t_list		*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
+int			ft_printf(const char *str, ...);
+char		*int_to_hex(int num, char a);
+char		*ulong_to_hex(unsigned long num, char a);
+char		*ft_utoa(unsigned int n);
+char		*ft_itoa_print(int n);
+int			in_set_print(char c, char *set);
+int			print_format(char c, va_list args, int pr);
+int			len_hex(unsigned long long n);
+int			print_hex_arg(int n, char c, int pr);
+int			ft_numlen_print(int n);
+int			print_int_arg(int n, int pr);
+int			print_ptr_arg(void *ptr, int pr);
+int			str_len(char *str);
+int			print_string(char *str);
+int			print_char(int c);
+int			print_str_arg(char *str, int pr);
+int			ft_unumlen(unsigned int n);
+int			print_uint_arg(int n, int pr);
 
 #endif
